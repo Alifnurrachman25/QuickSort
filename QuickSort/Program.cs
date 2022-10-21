@@ -90,7 +90,21 @@ namespace QuickSort
                     mov_count++;
                 }
             }
+            //j now contains the index of the last element in the sorted list
+            
+            if (low < j)
+            {
+                //Move the pivot to its correct position in the list
+                swap(low, j);
+                mov_count++;
+            }
+            //sort the list on the left of pivot using quick sort
+            q_sort(low, j - 1);
+
+            //sort the list on the right of pivot using quick sort
+            q_sort(j + 1, high);
         }
+
         static void Main(string[] args)
         {
         }
